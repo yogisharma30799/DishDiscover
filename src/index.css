@@ -11,3 +11,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Card container */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+/* Restaurant name */
+.card h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Restaurant details */
+.card p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Restaurant image */
+.card img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Menu item container */
+.menu-item {
+  margin-top: 20px;
+}
+
+/* Menu item name */
+.menu-item h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu item price */
+.menu-item p {
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Menu item image */
+.menu-item img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
