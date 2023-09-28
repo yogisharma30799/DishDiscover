@@ -12,59 +12,24 @@ code {
     monospace;
 }
 
-/* Card container */
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px;
-  max-width: 400px;
-  background-color: #fff;
+.search-bar{
+  margin: 10px;
 }
 
-/* Restaurant name */
-.card h2 {
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 0;
+.card-list {
+  display: flex;
+  padding: 10px;
 }
 
-/* Restaurant details */
-.card p {
-  margin: 0;
-  padding: 0;
+.card{
+  border: 1px solid black;
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
 }
 
-/* Restaurant image */
-.card img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
-}
+.card > img{
+  width: 100%;
+  height: 120px;
 
-/* Menu item container */
-.menu-item {
-  margin-top: 20px;
-}
-
-/* Menu item name */
-.menu-item h4 {
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0;
-}
-
-/* Menu item price */
-.menu-item p {
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-/* Menu item image */
-.menu-item img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
 }

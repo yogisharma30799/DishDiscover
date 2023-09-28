@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './Components/Header';
-import { RestaurantCard } from './Components/Body';
-import { RestaurantsData } from './Components/Config';
+import Body from './Components/Body';
+
 
 function App() {
   return (
     <>
       <Header />
-      <RestaurantCard RestaurantsData={RestaurantsData} />
+      <Body/>
     </>
   );
 }
