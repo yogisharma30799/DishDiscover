@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
+import { FETCH_MENU_URL } from "./helper";
 
 
-export const FETCH_MENU_URL =
-    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9122238&lng=77.5923219&restaurantId=";
 
 const useRastaurant = (resId) => {
     const [restaurant, setRestaurant] = useState();
     const [restMenu, setRestMenu] = useState();
 
     useEffect(() => {
-        getRestaurant()
+        getRestaurantMenu()
     }, []);
 
-    async function getRestaurant() {
+    async function getRestaurantMenu() {
         const response = await fetch(FETCH_MENU_URL + resId);
         const json = await response.json();
         setRestaurant(json.data?.cards[0]?.card?.card?.info);

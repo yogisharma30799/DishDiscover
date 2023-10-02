@@ -23,8 +23,8 @@ export default App;
 export const appRoute = createBrowserRouter([
   {
     path: "/",
-    errorElement: <Error />,
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: "/about",
