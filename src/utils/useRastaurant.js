@@ -4,7 +4,7 @@ import { FETCH_MENU_URL } from "./helper";
 
 
 const useRastaurant = (resId) => {
-    const [restaurant, setRestaurant] = useState();
+    const [restaurant, setRestaurant] = useState(null);
     const [restMenu, setRestMenu] = useState();
 
     useEffect(() => {

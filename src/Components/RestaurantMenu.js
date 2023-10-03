@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
             <div>
                 <h1> Restaurant id : {resId}</h1>
                 <h1> Restaurant name : {restaurant?.name}</h1>
-                <img src={CDN_URL + restaurant?.cloudinaryImageId}></img>
+                <img alt="menu" src={CDN_URL + restaurant?.cloudinaryImageId}></img>
             </div>
             <h1 className="font-bold text-xl mt-4 mb-10">
                 Recommended items (
