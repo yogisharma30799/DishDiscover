@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useOnline from '../utils/useOnline'
+import UserContext from '../utils/UserContext'
+import { useContext } from 'react'
 
 function Header() {
-    const  isOnline  = useOnline()
+    const isOnline = useOnline()
+    const {user} = useContext(UserContext);
     return (
         <header className="flex justify-between bg-black text-cyan-500">
             <img className='h-16 p-2' src="logo192.png" alt="logo" />
@@ -17,6 +20,7 @@ function Header() {
                     <p>{ isOnline ? "🟢" : "🔴"}</p>
                 </ul>
             </div>
+            <p className='font-bold p-4'>{user.name}</p>
                 <button>Login</button>
         </header>)
 }

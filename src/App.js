@@ -6,16 +6,23 @@ import Contact from './Components/Contact';
 import Error from './Components/Error';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import RestaurantMenu from './Components/RestaurantMenu';
-import { lazy, Suspense} from 'react';
+import { lazy, Suspense, useState } from 'react';
+import UserContext from './utils/UserContext';
 
 
-const InstaMart = lazy(()=>import("./Components/InstaMart"))
+const InstaMart = lazy(() => import("./Components/InstaMart"))
 
 function App() {
+  const [user, setUser] = useState({
+    name: "yogeshwar",
+    email: "roenfwefnwedn"
+  })
   return (
     <>
+      <UserContext.Provider value={{ user: user}}>
       <Header />
       <Outlet />
+      </UserContext.Provider>
     </>
   );
 }
