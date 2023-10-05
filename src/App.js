@@ -8,6 +8,9 @@ import { createBrowserRouter, Outlet } from 'react-router-dom';
 import RestaurantMenu from './Components/RestaurantMenu';
 import { lazy, Suspense, useState } from 'react';
 import UserContext from './utils/UserContext';
+import { Provider } from 'react-redux';
+import Store from './utils/store';
+import Cart from './Components/Cart';
 
 
 const InstaMart = lazy(() => import("./Components/InstaMart"))
@@ -18,12 +21,12 @@ function App() {
     email: "roenfwefnwedn"
   })
   return (
-    <>
+    <Provider store={Store}>
       <UserContext.Provider value={{ user: user}}>
       <Header />
       <Outlet />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 }
 
@@ -50,6 +53,10 @@ export const appRoute = createBrowserRouter([
       {
         path: "/restaurantMenu/:resId",
         element: <RestaurantMenu />
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       },
       {
         path: "/instamart",
