@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useOnline from '../utils/useOnline'
 import UserContext from '../utils/UserContext'
-import { useContext } from 'react'
 import { useSelector } from 'react-redux'
 
 function Header() {
@@ -10,20 +9,25 @@ function Header() {
     const { user } = useContext(UserContext);
     const cartItems = useSelector((store => store.cart.items));
 
+    const [isLogin, setIslogin] = useState(true);
 
 
     console.log("cart", cartItems);
 
 
     return (
-        <header className="flex justify-evenly bg-teal-50 text-black font-bold h-20 divide-solid border-b border-black shadow-md z-50 items-center sticky">
-            <img className='h-20 p-2' src="logo192.png" alt="logo" />
+        <header className="flex justify-evenly bg-teal-50 text-black font-bold h-20 border-b border-black shadow-md z-50 items-center">
+            <Link to="/"><img className='h-20 p-2' src="logo192.png" alt="logo" /></Link>
+            <div className='flex items-center'>
+                <p className='text-xs flex'>{isOnline ? "🟢" : "🔴"}</p>
+                <p>{user.name}</p>
+            </div>
             <div className="nav__list">
                 <ul className="py-5 flex">
                     <li className='px-3'><Link to="/">Home</Link></li>
                     <li className='px-3'><Link to="/about">About</Link></li>
-                    <li className='px-3'><Link to="/contact">Contact</Link></li>
-                    <li className='px-3'><Link to="/instamart">InstaMart</Link></li>
+                    {/* <li className='px-3'><Link to="/contact">Contact</Link></li> */}
+                    {/* <li className='px-3'><Link to="/instamart">InstaMart</Link></li> */}
                     <li
                         className='sm:mr-7 md:mr-24 lg:mr-32 flex gap-1 relative items-center pl-7 font-medium text-base '>
                         <Link
@@ -44,13 +48,12 @@ function Header() {
                             </span>
                             <span>Cart</span>
                         </Link>
-                    </li>                </ul>
+                    </li>
+                </ul>
             </div>
-            <div className='flex'>
-                <p>{user.name}</p>
-                <p className='text-xs'>{isOnline ? "🟢" : "🔴"}</p>
-            </div>
-            <button>Login</button>
+
+            {isLogin ? <button onClick={() => setIslogin(false)}>Logout</button> : <button onClick={() => setIslogin(true)}>Login</button>}
+
         </header>)
 }
 

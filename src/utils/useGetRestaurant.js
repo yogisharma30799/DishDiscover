@@ -24,8 +24,8 @@ const useGetRestaurant = () => {
         }
       }
       
-    console.log(FilteredRestaurant)
-    console.log(allRestaurant)
+    console.log(FilteredRestaurant, "FilteredRestaurant")
+    console.log(allRestaurant,"allRestaurant")
 
     return [allRestaurant , setAllRestaurant , FilteredRestaurant , setFilteredRestaurant]
 

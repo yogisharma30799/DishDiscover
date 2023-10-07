@@ -17,7 +17,6 @@ export const RestaurantCard = (props) => {
       <div className='transition-transform transform hover:scale-95'>
       <div className='relative overflow-hidden rounded-lg'>
         <img className='rounded-2xl object-cover w-full h-full' src={CDN_URL + cloudinaryImageId} alt="food-image" />
-        <div className='absolute inset-0 bg-gradient-to-t from-black via-transparent to transparent '></div>
       </div>
       <div className='ml-3 mt-3'>
         <h2 className='font-semibold text-xl line-clamp-1'>{name}</h2>

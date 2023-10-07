@@ -11,6 +11,7 @@ import UserContext from './utils/UserContext';
 import { Provider } from 'react-redux';
 import Store from './utils/store';
 import Cart from './Components/Cart';
+import Footer from './Components/Footer';
 
 
 const InstaMart = lazy(() => import("./Components/InstaMart"))
@@ -24,7 +25,8 @@ function App() {
     <Provider store={Store}>
       <UserContext.Provider value={{ user: user}}>
       <Header />
-      <Outlet />
+        <Outlet />
+        <Footer/>
       </UserContext.Provider>
     </Provider>
   );
@@ -57,6 +59,10 @@ export const appRoute = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart/>
+      },
+      {
+        path: "/footer",
+        element: <Footer/>
       },
       {
         path: "/instamart",

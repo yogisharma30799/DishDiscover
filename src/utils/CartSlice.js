@@ -20,7 +20,7 @@ const CartSlice = createSlice({
             state.items[index].info.quantity++;
           }
     
-          console.log(state.items.length, "this is cart payload");
+        //   console.log(state.items.length, "this is cart payload");
         },
         increaseQuantity: (state, action) => {
           const index = state.items.findIndex(

@@ -12,7 +12,9 @@ import React from "react";
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
     console.log(cartItems, "cart items");
+
     const dispatch = useDispatch();
+
     function HandleClearCart() {
       dispatch(clearCart());
     }
@@ -56,7 +58,7 @@ const Cart = () => {
     return (
       <div className="my-2 border-b py-2 md:flex-row flex flex-col text-sm  gap-8 relative">
         <button
-          className="absolute bottom-0 right-0 mt-2 mr-2 px-2 py-1  hover:bg-gray-200 rounded-full focus:outline-none"
+          className="absolute bottom-0 right-0 mt-2 mr-2 px-2 py-1  hover:bg-gray-200 rounded-full"
           onClick={() => HandleRemoveItem()}
         >
           X
@@ -74,7 +76,7 @@ const Cart = () => {
           <span className="font-semibold">{name}</span>
           <span className="font-semibold">
             &#8377;
-            {!price ? "250" : (price / 100) * quantity}
+            {!price ? "250" : (price * quantity / 100).toFixed(2)}
           </span>
           <span className="text-sm text-gray-500">{description}</span>
           <div className="flex items-center space-x-2">
